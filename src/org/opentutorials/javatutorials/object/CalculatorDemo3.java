@@ -24,6 +24,7 @@ public class CalculatorDemo3 {
 		
 		sum(left, right);
 		avg(left, right);
+		
 	}
 
 }
