@@ -1,9 +1,11 @@
 package org.opentutorials.javatutorials.io;
 
-public class InputDemo {
+public class InputForeachDemo {
 
 	public static void main(String[] args) {
-		System.out.println(args.length);
+		for(String e : args) {
+			System.out.println(e);
+		}
 	}
 
 }
