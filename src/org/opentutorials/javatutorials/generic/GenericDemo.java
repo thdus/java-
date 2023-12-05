@@ -1,26 +1,24 @@
 package org.opentutorials.javatutorials.generic;
-class EmployeeInfo{
+interface Info{
+	int getLevel();
+}
+class EmployeeInfo implements Info{
 	public int rank;
 	EmployeeInfo(int rank){ this.rank = rank; }
-}
-class Person<T, S>{
-	public T info;
-	public S id;
-	Person(T info, S id){
-		this.info = info;
-		this.id = id;
+	public int getLevel() {
+		return this.rank;
 	}
-	public <U> void printlnfo(U info) {
-		System.out.println(info);
+}
+class Person<T extends Info>{
+	public T info;
+	Person(T info){
+		this.info = info;
+		info.getLevel();
 	}
 }
 public class GenericDemo {
 	public static void main(String[] args) {
-		EmployeeInfo e = new EmployeeInfo(1);
-		Integer i = new Integer(10);
-		Person p1 = new Person(e, i);
-		p1.printInfo(e);
-
+		Person<EmployeeInfo> p1 = new Person<EmployeeInfo>(new EmployeeInfo(1));
 	}
 
 }
