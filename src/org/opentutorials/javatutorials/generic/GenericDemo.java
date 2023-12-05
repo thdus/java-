@@ -10,12 +10,16 @@ class Person<T, S>{
 		this.info = info;
 		this.id = id;
 	}
+	public <U> void printlnfo(U info) {
+		System.out.println(info);
+	}
 }
 public class GenericDemo {
 	public static void main(String[] args) {
-		Integer id = new Integer(1);
-		Person<EmployeeInfo, Integer> p1 = new Person<EmployeeInfo, Integer>(new EmployeeInfo(1), id);
-		System.out.println(p1.id.intValue());
+		EmployeeInfo e = new EmployeeInfo(1);
+		Integer i = new Integer(10);
+		Person p1 = new Person(e, i);
+		p1.printInfo(e);
 
 	}
 
